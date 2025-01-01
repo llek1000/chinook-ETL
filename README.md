@@ -12,7 +12,7 @@ Dáta sú štruktúrované v relačnej databáze s viacerými tabuľkami. Hlavno
 
 ### ERD diagram
 <p align:"center";>
-  <img src="https://github.com/J-Pecuchova/AmazonBooks-ETL/blob/master/erd_schema.png" alt="ERD diagram">
+  <img src="" alt="ERD diagram">
   <br>
   <em>Screenshot ERD diagramu</em>
 </p>
