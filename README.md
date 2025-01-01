@@ -8,6 +8,14 @@ Analýza má za cieľ:
 
 ## Typ dát
 Dáta sú štruktúrované v relačnej databáze s viacerými tabuľkami. Hlavnou tabuľkou pre analýzu je tabuľka faktúr, ktorá je prepojená s tabuľkami zákazníkov, zamestnancov a inými podpornými údajmi.
+Štrukturované dáta sú zobrazené na ERD (etnitno-relačný diagram) diagrame nižšie.
+
+### ERD diagram
+<p align:"center";>
+  <img src="https://github.com/J-Pecuchova/AmazonBooks-ETL/blob/master/erd_schema.png" alt="ERD diagram">
+  <br>
+  <em>Screenshot ERD diagramu</em>
+</p>
 
 ---
 
@@ -133,6 +141,13 @@ Každá faktúra obsahuje dátum, na ktorý odkazuje (1:N vzťah medzi `DimTime`
 ### Typ dimenzie
 **Stabilná dimenzia (Fixed Dimension)**  
 - Dimenzia času sa nemení, pretože je statická (dátumy sú nemenné).
+
+Štruktúra hviezdového diagramu je znázornená nižšie:
+<p align:"center";>
+  <img src="https://github.com/llek1000/chinook-ETL/blob/main/star_schema.png">
+  <br>
+  <em>Screenshot hviezdového diagramu</em>
+</p>
 
 ---
 
