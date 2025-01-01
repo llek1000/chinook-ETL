@@ -1,3 +1,61 @@
+# Úvod a popis zdrojových dát
+Tento projekt sa zameriava na analýzu faktúr a súvisiacich údajov pomocou dimenzionálneho modelu. Primárnym cieľom je získať prehľad o príjmoch, zákazníkoch, zamestnancoch a časových trendoch. Zdrojové dáta pochádzajú z databázy Chinook, ktorá obsahuje údaje o fakturácii, zákazníkoch a zamestnancoch. 
+
+Analýza má za cieľ:
+- Identifikovať výkonnosť zamestnancov, ktorí poskytujú podporu zákazníkom.
+- Sledovať správanie zákazníkov podľa regiónov, krajín a ďalších demografických údajov.
+- Analyzovať časové trendy vo fakturácii.
+
+## Typ dát
+Dáta sú štruktúrované v relačnej databáze s viacerými tabuľkami. Hlavnou tabuľkou pre analýzu je tabuľka faktúr, ktorá je prepojená s tabuľkami zákazníkov, zamestnancov a inými podpornými údajmi.
+
+---
+
+## Popis zdrojových tabuliek
+
+### 1. **Tabuľka `Employee`**
+- **Popis:** Obsahuje údaje o zamestnancoch, ktorí poskytujú podporu zákazníkom. Títo zamestnanci majú rôzne pozície a pracujú v rôznych mestách a krajinách.
+- **Hlavné stĺpce:**
+  - `EmployeeId`: Jedinečný identifikátor zamestnanca.
+  - `FirstName`, `LastName`: Meno a priezvisko zamestnanca.
+  - `Title`: Pozícia zamestnanca (napr. Sales Support Agent).
+  - `ReportsTo`: Identifikátor nadriadeného zamestnanca.
+  - `HireDate`: Dátum nástupu zamestnanca.
+
+### 2. **Tabuľka `Customer`**
+- **Popis:** Obsahuje údaje o zákazníkoch, ktorí realizovali objednávky. Táto tabuľka obsahuje demografické údaje, ako sú adresa, mesto, krajina a pridelený zamestnanec podpory.
+- **Hlavné stĺpce:**
+  - `CustomerId`: Jedinečný identifikátor zákazníka.
+  - `FirstName`, `LastName`: Meno a priezvisko zákazníka.
+  - `Country`, `City`: Krajina a mesto, kde sa zákazník nachádza.
+  - `SupportRepId`: Identifikátor zamestnanca, ktorý poskytuje podporu tomuto zákazníkovi.
+
+### 3. **Tabuľka `Invoice`**
+- **Popis:** Hlavná tabuľka faktúr, ktorá obsahuje údaje o fakturácii a príjmoch. Táto tabuľka je kľúčová pre analýzu príjmov.
+- **Hlavné stĺpce:**
+  - `InvoiceId`: Jedinečný identifikátor faktúry.
+  - `CustomerId`: Odkaz na zákazníka, ktorý objednávku realizoval.
+  - `InvoiceDate`: Dátum vystavenia faktúry.
+  - `BillingCity`, `BillingCountry`: Adresa zákazníka pre fakturáciu.
+  - `Total`: Celková suma faktúry.
+
+---
+
+## Vzťahy medzi tabuľkami
+- **`Employee` ↔ `Customer`:**  
+  Každý zákazník má priradeného zamestnanca podpory (`SupportRepId`).
+- **`Customer` ↔ `Invoice`:**  
+  Každá faktúra je spojená s konkrétnym zákazníkom (`CustomerId`).
+- **`Employee` ↔ `Invoice`:**  
+  Zamestnanci majú nepriame spojenie s faktúrami cez zákazníkov.
+
+---
+
+## Účel analýzy
+- **Zamestnanci:** Identifikácia výkonnosti zamestnancov v oblasti podpory zákazníkov a ich príspevok k príjmom.
+- **Zákazníci:** Analýza správania zákazníkov, demografické rozdelenie a lokalizácia.
+- **Faktúry:** Sledovanie príjmov, identifikácia trendov a sezónnosti na základe časovej dimenzie.
+
 ### Hlavné metriky
 - **`Total`**: Celková suma faktúry. Táto metrika sa používa na analýzu príjmov podľa rôznych dimenzií (čas, zamestnanci, zákazníci, krajiny).
 - **`InvoiceDateId`**: Odkaz na dimenziu času na analýzu trendov a sezónnosti.
