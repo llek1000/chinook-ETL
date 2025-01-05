@@ -44,3 +44,12 @@ Zdrojové dáta pochádzajú z databázy **Chinook**, ktorá simuluje reálne ob
 9. `MediaType`
 - Obsahuje informácie o typoch médií, v ktorých sú skladby dostupné (napr. MP3, AAC).
 - **Hlavné stĺpce:** `MediaTypeId`, `Name`.
+
+### 1.2 Dátová architektúra
+### ERD diagram
+
+<p align="center">
+  <img src="https://github.com/llek1000/chinook-ETL/blob/main/Chinook_ERD.png" alt="ERD Schema">
+  <br>
+  <em>Obrázok 1 Entitno-relačná schéma Chinook</em>
+</p>
