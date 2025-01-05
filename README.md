@@ -1,11 +1,11 @@
 # ETL proces Chinook
 Cieľom projektu je navrhnúť a implementovať **dimenzionálny model** pre analýzu výkonnosti zamestnancov, správania zákazníkov a trendov v príjmoch spoločnosti na základe dostupných údajov z databázy **Chinook**. Tento model umožní sledovanie kľúčových metrík, ako sú celkové príjmy, počet zákazníkov a výkonnosť zamestnancov v rôznych časových obdobiach a geografických lokalitách.
 
+---
+
 ## 1. Úvod a popis zdrojových dát
 
 Zdrojové dáta pochádzajú z databázy **Chinook**, ktorá simuluje reálne obchodné prostredie digitálnej hudobnej spoločnosti. Databáza obsahuje údaje o zákazníkoch, zamestnancoch, faktúrach, skladbách, albumoch a interpretoch. Tieto údaje sú vhodné na analýzu predaja, výkonnosti zamestnancov a správania zákazníkov.
-
----
 
 ### 1.1 Popis tabuliek v databáze
 
