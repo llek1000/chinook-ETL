@@ -53,3 +53,141 @@ Zdrojové dáta pochádzajú z databázy **Chinook**, ktorá simuluje reálne ob
   <br>
   <em>Obrázok 1 Entitno-relačná schéma Chinook</em>
 </p>
+
+# Výkonnosť zamestnancov - Hviezdicový model (Star Schema)
+
+Tento dokument poskytuje prehľad o hviezdicovom modeli navrhnutom na analýzu **výkonnosti zamestnancov** pomocou databázy Chinook. Model obsahuje centrálnu faktovú tabuľku a niekoľko dimenzionálnych tabuliek, ktoré umožňujú detailnú analýzu predajov.
+
+---
+
+## 🟠 Faktová tabuľka: Sales_Fact
+
+Tabuľka **Sales_Fact** je centrálnou tabuľkou v hviezdicovom modeli a obsahuje hlavné transakčné údaje týkajúce sa predajov.
+
+### **Polia:**
+- `InvoiceLineID` - Unikátny identifikátor riadku faktúry
+- `EmployeeID` - Identifikátor zamestnanca, ktorý uskutočnil predaj
+- `CustomerID` - Identifikátor zákazníka, ktorý uskutočnil nákup
+- `InvoiceID` - Identifikátor faktúry
+- `TrackID` - Identifikátor predanej skladby
+- `Quantity` - Počet zakúpených položiek
+- `UnitPrice` - Cena za jednotku
+- `TotalAmount` - Celková suma predaja
+- `SaleDate` - Dátum predaja
+
+---
+
+## 🟢 Dimenzionálne tabuľky
+
+### **1. Employee_Dim (Zamestnanci)**
+Obsahuje informácie o zamestnancoch vrátane ich osobných údajov a pracovných pozícií.
+
+#### **Polia:**
+- `EmployeeID` - Unikátny identifikátor zamestnanca
+- `LastName` - Priezvisko zamestnanca
+- `FirstName` - Krstné meno zamestnanca
+- `Title` - Pracovná pozícia
+- `HireDate` - Dátum nástupu do práce
+- `Address` - Adresa zamestnanca
+- `City` - Mesto zamestnanca
+- `Country` - Krajina zamestnanca
+- `Phone` - Telefónne číslo zamestnanca
+- `Email` - Emailová adresa zamestnanca
+
+#### **Typ SCD:** SCD Typ 2 (Sledujú sa historické zmeny v údajoch zamestnanca)
+
+---
+
+### **2. Customer_Dim (Zákazníci)**
+Obsahuje informácie o zákazníkoch vrátane ich kontaktných údajov a polohy.
+
+#### **Polia:**
+- `CustomerID` - Unikátny identifikátor zákazníka
+- `FullName` - Celé meno zákazníka
+- `Address` - Adresa zákazníka
+- `City` - Mesto zákazníka
+- `Country` - Krajina zákazníka
+- `Phone` - Telefónne číslo zákazníka
+- `Email` - Emailová adresa zákazníka
+- `SupportRepID` - Identifikátor zamestnanca, ktorý spravuje zákazníka
+
+#### **Typ SCD:** SCD Typ 2 (Sledujú sa historické zmeny v údajoch zákazníka)
+
+---
+
+### **3. Time_Dim (Časová dimenzia)**
+Poskytuje podrobnosti o dátume a čase predaja.
+
+#### **Polia:**
+- `SaleDate` - Dátum predaja (primárny kľúč)
+- `Year` - Rok predaja
+- `Month` - Mesiac predaja
+- `Day` - Deň predaja
+- `Weekday` - Deň v týždni
+
+#### **Typ SCD:** Nie je relevantné (Časové údaje sa nemenia)
+
+---
+
+### **4. Track_Dim (Skladby)**
+Obsahuje podrobnosti o predávaných skladbách.
+
+#### **Polia:**
+- `TrackID` - Unikátny identifikátor skladby
+- `Name` - Názov skladby
+- `AlbumID` - Identifikátor albumu, do ktorého skladba patrí
+- `GenreID` - Identifikátor žánru skladby
+- `MediaTypeID` - Identifikátor typu média skladby
+- `Composer` - Autor skladby
+- `Milliseconds` - Dĺžka skladby v milisekundách
+- `Bytes` - Veľkosť skladby v bajtoch
+- `UnitPrice` - Cena za skladbu
+
+#### **Typ SCD:** SCD Typ 1 (Zmeny sa prepíšu)
+
+---
+
+### **5. Album_Dim (Albumy)**
+Obsahuje podrobnosti o albumoch.
+
+#### **Polia:**
+- `AlbumID` - Unikátny identifikátor albumu
+- `Title` - Názov albumu
+- `ArtistID` - Identifikátor umelca albumu
+
+#### **Typ SCD:** SCD Typ 1 (Zmeny sa prepíšu)
+
+---
+
+### **6. Artist_Dim (Umelci)**
+Obsahuje podrobnosti o umelcoch.
+
+#### **Polia:**
+- `ArtistID` - Unikátny identifikátor umelca
+- `Name` - Názov umelca
+
+#### **Typ SCD:** SCD Typ 1 (Zmeny sa prepíšu)
+
+---
+
+### **7. Genre_Dim (Žánre)**
+Obsahuje informácie o hudobných žánroch.
+
+#### **Polia:**
+- `GenreID` - Unikátny identifikátor žánru
+- `Name` - Názov žánru
+
+#### **Typ SCD:** SCD Typ 1 (Zmeny sa prepíšu)
+
+---
+
+### **8. MediaType_Dim (Typy médií)**
+Obsahuje informácie o typoch médií (napr. MP3, WAV, AAC).
+
+#### **Polia:**
+- `MediaTypeID` - Unikátny identifikátor typu média
+- `Name` - Názov typu média
+
+#### **Typ SCD:** SCD Typ 1 (Zmeny sa prepíšu)
+
+---
