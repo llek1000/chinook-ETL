@@ -54,13 +54,11 @@ Zdrojové dáta pochádzajú z databázy **Chinook**, ktorá simuluje reálne ob
   <em>Obrázok 1 Entitno-relačná schéma Chinook</em>
 </p>
 
-# Výkonnosť zamestnancov - Hviezdicový model (Star Schema)
-
 Tento dokument poskytuje prehľad o hviezdicovom modeli navrhnutom na analýzu **výkonnosti zamestnancov** pomocou databázy Chinook. Model obsahuje centrálnu faktovú tabuľku a niekoľko dimenzionálnych tabuliek, ktoré umožňujú detailnú analýzu predajov.
 
 ---
 
-## 🟠 Faktová tabuľka: Sales_Fact
+## 🟠 Faktová tabuľka: InvoiceLine_Fact
 
 Tabuľka **Sales_Fact** je centrálnou tabuľkou v hviezdicovom modeli a obsahuje hlavné transakčné údaje týkajúce sa predajov.
 
