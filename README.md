@@ -190,4 +190,11 @@ Obsahuje informácie o typoch médií (napr. MP3, WAV, AAC).
 
 #### **Typ SCD:** SCD Typ 1 (Zmeny sa prepíšu)
 
+
+<p align="center">
+  <img src="https://github.com/llek1000/chinook-ETL/blob/main/StarScheme.png" alt="ERD Schema">
+  <br>
+  <em>Obrázok 1 Entitno-relačná schéma Chinook</em>
+</p>
+
 ---
