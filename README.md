@@ -84,7 +84,7 @@ Obsahuje hlavné transakčné údaje týkajúce sa predajov.
 - `PlaylistId` - Identifikátor playlistu
 - `ArtistId` - Identifikátor umelca
 - `AlbumId` - Identifikátor albumu
-- `InvoiceDimId` - Identifikátor faktúry v dimenzii
+- `InvoiceId` - Identifikátor faktúry v dimenzii
 
 ### Dimenzionálne tabuľky
 
