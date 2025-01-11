@@ -416,7 +416,4 @@ GROUP BY da.ArtistId, da.Name
 ORDER BY TotalSold DESC;
 ```
 
----
-
 **Autor:** Michal Bogdány
-```
