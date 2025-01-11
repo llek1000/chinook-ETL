@@ -343,7 +343,12 @@ ETL proces v Snowflake umožnil spracovanie pôvodných dát z `.csv` formátu d
 
 ## 4. Vizualizácia dát
 
-Navrhnuté vizualizácie odpovedajú na dôležité otázky a odhaľujú kľúčové metriky.
+Navrhnuté vizualizácie odpovedajú na dôležité otázky a odhaľujú kľúčové metriky. Zobrazená vizualizácia dát je nižšie.
+<p align="center">
+  <img src="https://github.com/llek1000/chinook-ETL/blob/main/Dashboard.png" alt="ERD Schema">
+  <br>
+  <em>Obrázok 1 Vizualizácia dát v Snowflake</em>
+</p>
 
 ### Graf 1: Príjmy podľa zamestnancov
 Táto vizualizácia zobrazuje celkové príjmy generované jednotlivými zamestnancami. Pomáha identifikovať najvýkonnejších zamestnancov.
