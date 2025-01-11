@@ -415,4 +415,8 @@ JOIN Artist_Dim da ON sf.ArtistId = da.ArtistId
 GROUP BY da.ArtistId, da.Name
 ORDER BY TotalSold DESC;
 ```
+
+---
+
 **Autor:** Michal Bogdány
+```
