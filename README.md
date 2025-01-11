@@ -347,7 +347,7 @@ Navrhnuté vizualizácie odpovedajú na dôležité otázky a odhaľujú kľúč
 <p align="center">
   <img src="https://github.com/llek1000/chinook-ETL/blob/main/Dashboard.png" alt="ERD Schema">
   <br>
-  <em>Obrázok 1 Vizualizácia dát v Snowflake</em>
+  <em>Obrázok 3 Vizualizácia dát v Snowflake</em>
 </p>
 
 ### Graf 1: Príjmy podľa zamestnancov
